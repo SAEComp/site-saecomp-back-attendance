@@ -1,5 +1,6 @@
 import express from "express";
 import { errorHandler } from "./middlewares/errorHandler";
+import userRouter from "./routers/user.routers";
 
 // Instanciação do express
 const app = express();
@@ -11,7 +12,7 @@ const port: number = 3000;
 app.use(express.json());
 
 // ================= routers ================= //
-
+app.use("/api/attendance", userRouter);
 
 // ================= error handler ================= //
 app.use(errorHandler);
